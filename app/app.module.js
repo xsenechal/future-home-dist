@@ -10,15 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var http_1 = require('@angular/http');
+var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var core_2 = require('angular2-google-maps/core');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            imports: [
+                platform_browser_1.BrowserModule,
+                http_1.HttpModule,
+                common_1.CommonModule,
+                forms_1.FormsModule,
+                core_2.AgmCoreModule.forRoot({
+                    apiKey: 'AIzaSyAxrc-3Uzlb69Mf5V9ZDDDF9rQ7aqydQ7k'
+                })
+            ],
+            providers: [],
             declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
